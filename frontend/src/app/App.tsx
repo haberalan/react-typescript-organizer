@@ -53,8 +53,6 @@ export const App = () => {
           <Route path="dashboard" element={user.token ? <DashboardLayout /> : <Navigate to="/auth/login" replace />}>
             <Route index element={<Dashboard />} />
             <Route path="todos" element={<Todos />} />
-            <Route path="notes" element={<p>notes</p>} />
-            <Route path="expenses" element={<p>expenses</p>} />
           </Route>
           <Route path="settings" element={user.token ? <Settings /> : <Navigate to="/auth/login" replace />} />
           <Route path="*" element={<p>not found</p>} />

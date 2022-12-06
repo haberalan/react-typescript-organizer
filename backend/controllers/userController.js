@@ -1,4 +1,6 @@
 const User = require('../models/userModel');
+const Project = require('../models/projectModel');
+const Task = require('../models/taskModel');
 const jwt = require('jsonwebtoken');
 
 const createToken = (_id) => {
@@ -59,8 +61,6 @@ const deleteUser = async (req, res) => {
 
   try {
     const user = await User.deleteUser(user_id);
-
-    // delete all data associated with user
 
     res.status(200).json({ email: user.email });
   } catch (err) {

@@ -19,8 +19,6 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import LogoutIcon from '@mui/icons-material/Logout';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import ListAltIcon from '@mui/icons-material/ListAlt';
-import EventNoteIcon from '@mui/icons-material/EventNote';
-import LocalAtmOutlinedIcon from '@mui/icons-material/LocalAtmOutlined';
 import { Link as RouterLink, Outlet } from 'react-router-dom';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
@@ -160,48 +158,6 @@ export const DashboardLayout = () => {
               </ListItemIcon>
               <ListItemText>
                 <Typography variant="h6">Todos</Typography>
-              </ListItemText>
-            </ListItem>
-            <ListItem
-              component={RouterLink}
-              to="/dashboard/notes"
-              onClick={handleCloseDrawer}
-              sx={{
-                width: '200px',
-                textDecoration: 'none',
-                color: 'inherit',
-                transition: 'all 0.2s ease-in-out',
-                '&:hover': {
-                  color: 'primary.light',
-                },
-              }}
-            >
-              <ListItemIcon>
-                <EventNoteIcon />
-              </ListItemIcon>
-              <ListItemText>
-                <Typography variant="h6">Notes</Typography>
-              </ListItemText>
-            </ListItem>
-            <ListItem
-              component={RouterLink}
-              to="/dashboard/expenses"
-              onClick={handleCloseDrawer}
-              sx={{
-                width: '200px',
-                textDecoration: 'none',
-                color: 'inherit',
-                transition: 'all 0.2s ease-in-out',
-                '&:hover': {
-                  color: 'primary.light',
-                },
-              }}
-            >
-              <ListItemIcon>
-                <LocalAtmOutlinedIcon />
-              </ListItemIcon>
-              <ListItemText>
-                <Typography variant="h6">Expenses</Typography>
               </ListItemText>
             </ListItem>
           </List>

@@ -20,13 +20,10 @@ Organizer - [demo](https://haber-organizer.netlify.app)
 - JWT authentication
 - CRUD of todos
 - CRUD users
-- Projects for more than one user
 
 # To do
 
 - Finish app
-- Add notes
-- Add expenses
 - Make it responsive
 
 ## Installation
