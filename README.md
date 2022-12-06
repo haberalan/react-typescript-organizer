@@ -1,5 +1,7 @@
 # react-typescript-organizer
 
+# WORK IN PROGRESS...
+
 Organizer - [demo](https://haber-organizer.netlify.app)
 
 ## Technologies
@@ -22,7 +24,10 @@ Organizer - [demo](https://haber-organizer.netlify.app)
 
 # To do
 
-- ?
+- Finish app
+- Add notes
+- Add expenses
+- Make it responsive
 
 ## Installation
 

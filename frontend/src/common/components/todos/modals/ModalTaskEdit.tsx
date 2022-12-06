@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { useValidation } from '../../../hooks/useValidation';
 import { useAppDispatch, useAppSelector } from '../../../hooks/useRedux';
 import { selectUser } from '../../../../store/user/userSlice';
-import { fetchCreateTask, fetchDeleteTask, fetchUpdateTask } from '../../../../store/tasks/tasksSlice';
+import { fetchDeleteTask, fetchUpdateTask } from '../../../../store/tasks/tasksSlice';
 import { TaskType } from '../../../../types/Task';
 
 interface ModalTaskEditProps {
