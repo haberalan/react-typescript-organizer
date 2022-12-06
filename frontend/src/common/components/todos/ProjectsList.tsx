@@ -6,7 +6,6 @@ import { selectProjects } from '../../../store/projects/projectsSlice';
 import { useAppSelector } from '../../hooks/useRedux';
 import { ModalProjectNew } from './modals/ModalProjectNew';
 import { ProjectsListItem } from './ProjectsListItem';
-import { SkeletonProject } from '../ui/SkeletonProject';
 
 const styles = {
   overflowX: 'auto',
