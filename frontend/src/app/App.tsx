@@ -21,6 +21,7 @@ import { Settings } from '../pages/Settings.page';
 import { DashboardLayout } from '../pages/DashboardLayout.page';
 import { Dashboard } from '../pages/Dashboard.page';
 import { Todos } from '../pages/Todos.page';
+import { NotFound } from '../pages/NotFound.page';
 
 export const App = () => {
   const user = useAppSelector(selectUser);
@@ -55,7 +56,7 @@ export const App = () => {
             <Route path="todos" element={<Todos />} />
           </Route>
           <Route path="settings" element={user.token ? <Settings /> : <Navigate to="/auth/login" replace />} />
-          <Route path="*" element={<p>not found</p>} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       )}
     </ThemeProvider>
