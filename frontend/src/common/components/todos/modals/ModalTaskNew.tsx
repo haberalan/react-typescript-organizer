@@ -40,8 +40,9 @@ export const ModalTaskNew = ({ open, handleClose, project_id }: ModalTaskNewProp
       setLoading(true);
       setEnteredText('');
       setTouchedText(false);
-      handleClose();
+      setHierarchy('0');
       await dispatch(fetchCreateTask({ token: user.token, project_id, item: { text: enteredText, hierarchy: Number(hierarchy) } }));
+      handleClose();
 
       setLoading(false);
     }

@@ -1,4 +1,5 @@
-import { Box, Stack, Button } from '@mui/material';
+import { Box, Stack, Button, Collapse } from '@mui/material';
+import { TransitionGroup } from 'react-transition-group';
 import { useState } from 'react';
 
 import { selectTasksPerProject } from '../../../store/tasks/tasksSlice';
@@ -39,9 +40,13 @@ export const TasksList = ({ project_id }: TasksListProps) => {
 
   return (
     <Stack maxHeight={300} spacing={2} sx={styles}>
-      {tasks.map((task) => (
-        <TasksListItem item={task} key={task._id} />
-      ))}
+      <Stack component={TransitionGroup} spacing={2}>
+        {tasks.map((task) => (
+          <Collapse key={task._id}>
+            <TasksListItem item={task} />
+          </Collapse>
+        ))}
+      </Stack>
       <ModalTaskNew open={openModal} handleClose={() => setOpenModal(false)} project_id={project_id} />
       <Box sx={{ display: 'flex', justifyContent: 'center' }}>
         <Button sx={{ color: 'primary.dark' }} onClick={() => setOpenModal(true)}>

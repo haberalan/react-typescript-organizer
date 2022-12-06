@@ -1,5 +1,5 @@
 import { Typography, Box, Container } from '@mui/material';
-import { useEffect, useCallback } from 'react';
+import { useEffect, useCallback, useState } from 'react';
 
 import { useAppDispatch, useAppSelector } from '../common/hooks/useRedux';
 import { fetchGetProjects } from '../store/projects/projectsSlice';
@@ -12,9 +12,13 @@ export const Todos = () => {
 
   const user = useAppSelector(selectUser);
 
+  const [loading, setLoading] = useState(false);
+
   const fetchProjectsAndTasks = useCallback(() => {
+    setLoading(true);
     dispatch(fetchGetProjects({ token: user.token }));
     dispatch(fetchGetTasks({ token: user.token }));
+    setLoading(false);
   }, [dispatch, user.token]);
 
   useEffect(() => {
@@ -36,7 +40,7 @@ export const Todos = () => {
         <Typography variant="h3" sx={{ alignSelf: 'center', fontWeight: '700' }} color="primary.dark">
           Todos
         </Typography>
-        <ProjectsList />
+        <ProjectsList loading={loading} />
       </Container>
     </Box>
   );
