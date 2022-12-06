@@ -1,6 +1,7 @@
 import { Typography, Box, Container } from '@mui/material';
-import { useEffect, useCallback, useState } from 'react';
+import { useEffect, useState } from 'react';
 
+import { SkeletonProject } from '../common/components/ui/SkeletonProject';
 import { useAppDispatch, useAppSelector } from '../common/hooks/useRedux';
 import { fetchGetProjects } from '../store/projects/projectsSlice';
 import { selectUser } from '../store/user/userSlice';
@@ -14,16 +15,15 @@ export const Todos = () => {
 
   const [loading, setLoading] = useState(false);
 
-  const fetchProjectsAndTasks = useCallback(() => {
-    setLoading(true);
-    dispatch(fetchGetProjects({ token: user.token }));
-    dispatch(fetchGetTasks({ token: user.token }));
-    setLoading(false);
-  }, [dispatch, user.token]);
-
   useEffect(() => {
+    const fetchProjectsAndTasks = async () => {
+      setLoading(true);
+      await dispatch(fetchGetProjects({ token: user.token }));
+      await dispatch(fetchGetTasks({ token: user.token }));
+      setLoading(false);
+    };
     fetchProjectsAndTasks();
-  }, [fetchProjectsAndTasks]);
+  }, [dispatch, user.token]);
 
   return (
     <Box
@@ -40,7 +40,7 @@ export const Todos = () => {
         <Typography variant="h3" sx={{ alignSelf: 'center', fontWeight: '700' }} color="primary.dark">
           Todos
         </Typography>
-        <ProjectsList loading={loading} />
+        {loading ? <SkeletonProject /> : <ProjectsList />}
       </Container>
     </Box>
   );

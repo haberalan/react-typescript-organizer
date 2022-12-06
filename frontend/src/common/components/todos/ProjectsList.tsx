@@ -30,11 +30,7 @@ const styles = {
   },
 };
 
-interface ProjectsListProps {
-  loading: boolean;
-}
-
-export const ProjectsList = ({ loading }: ProjectsListProps) => {
+export const ProjectsList = () => {
   const [openModal, setOpenModal] = useState(false);
 
   const projects = useAppSelector(selectProjects);
@@ -42,19 +38,11 @@ export const ProjectsList = ({ loading }: ProjectsListProps) => {
   return (
     <>
       <Stack component={TransitionGroup} minHeight={460} direction="row" spacing={2} alignItems="start" justifyContent="flex-start" sx={styles}>
-        {!loading &&
-          projects.items.map((project) => (
-            <Collapse key={project._id}>
-              <ProjectsListItem project={project} />
-            </Collapse>
-          ))}
-        {loading && (
-          <>
-            <SkeletonProject />
-            <SkeletonProject />
-            <SkeletonProject />
-          </>
-        )}
+        {projects.items.map((project) => (
+          <Collapse key={project._id}>
+            <ProjectsListItem project={project} />
+          </Collapse>
+        ))}
       </Stack>
       <ModalProjectNew open={openModal} handleClose={() => setOpenModal(false)} />
       <Button
