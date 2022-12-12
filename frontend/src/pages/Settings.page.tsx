@@ -151,21 +151,17 @@ export const Settings = () => {
                 mt: 3,
                 mb: 2,
                 fontSize: '1.2rem',
-                bgcolor: 'primary.main',
-                color: 'secondary.light',
+                bgcolor: 'secondary.light',
                 borderRadius: '10px',
                 transition: 'all 0.1s ease-in-out',
                 boxShadow: '0px 4px 0px 0px #244f5d',
                 '&:hover': {
-                  bgcolor: 'primary.dark',
-                  transform: 'translateY(1px)',
-                  boxShadow: '0px 3px 0px 0px #244f5d',
+                  transform: 'translateY(2px)',
+                  boxShadow: '0px 2px 0px 0px #244f5d',
                 },
                 '&:disabled': {
-                  color: 'secondary.dark',
-                  bgcolor: 'primary.dark',
-                  transform: 'translateY(1px)',
-                  boxShadow: '0px 3px 0px 0px #244f5d',
+                  transform: 'translateY(2px)',
+                  boxShadow: '0px 2px 0px 0px #244f5d',
                 },
               }}
             >

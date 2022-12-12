@@ -45,22 +45,20 @@ export const ProjectsList = () => {
       </Stack>
       <ModalProjectNew open={openModal} handleClose={() => setOpenModal(false)} />
       <Button
-        variant="contained"
         sx={{
           alignSelf: 'center',
           padding: '0 0.8rem',
           mt: 3,
           mb: 2,
           fontSize: '1.2rem',
-          bgcolor: 'primary.main',
-          color: 'secondary.light',
+          bgcolor: 'secondary.light',
           borderRadius: '10px',
           transition: 'all 0.1s ease-in-out',
           boxShadow: '0px 4px 0px 0px #244f5d',
           '&:hover': {
-            bgcolor: 'primary.dark',
-            transform: 'translateY(1px)',
-            boxShadow: '0px 3px 0px 0px #244f5d',
+            color: 'secondary.light',
+            transform: 'translateY(2px)',
+            boxShadow: '0px 2px 0px 0px #244f5d',
           },
         }}
         onClick={() => setOpenModal(true)}
