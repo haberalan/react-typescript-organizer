@@ -128,7 +128,7 @@ export const Login = () => {
           }}
         >
           <Typography variant="subtitle1" component="p">
-            &copy; 2022 Alan Haber
+            &copy; {new Date().getFullYear()} Alan Haber
           </Typography>
         </Link>
       </Stack>

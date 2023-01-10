@@ -175,7 +175,7 @@ export const DashboardLayout = () => {
           }}
         >
           <Typography variant="body1" component="p">
-            &copy; 2022 Alan Haber
+            &copy; {new Date().getFullYear()} Alan Haber
           </Typography>
         </Link>
       </Drawer>

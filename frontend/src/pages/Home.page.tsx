@@ -185,7 +185,7 @@ export const Home = () => {
           }}
         >
           <Typography variant="h5" component="p">
-            &copy; 2022 Alan Haber
+            &copy; {new Date().getFullYear()} Alan Haber
           </Typography>
         </Link>
       </Stack>
